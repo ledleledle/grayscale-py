@@ -26,7 +26,7 @@ def send_image(filename):
 def get_gallery():
     image_names = os.listdir('img')
     print(image_names)
-    return render_template("gallery.html", image_names=image_names)
+    return render_template("AdminLTE/index.html", image_names=image_names)
 
 if __name__ == "__main__":
     app.run(debug=True)
