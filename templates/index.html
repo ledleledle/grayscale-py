@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Citra Grayscale dengan Flask dan Pillow Python</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="custom-file-upload">
+  <h1>Citra Grayscale <span>dengan Flask dan Pillow Python</span></h1>
+  <form action="/upload" method="post" enctype="multipart/form-data" >
+      <span>
+        Pilih Gambar : <br><input type="file" name="image">
+      </span>
+    <input type="submit" value="Upload" class="btn btn-primary">
+  </form>
+
+  </div>
+</body>
+</html>
