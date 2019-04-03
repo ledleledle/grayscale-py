@@ -33,3 +33,18 @@
 <script src="{{ url_for('static', filename='bower_components/fastclick/lib/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ url_for('static', filename='dist/js/adminlte.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/jquery-validation/validator.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/jquery-validation/extension.min.js') }}"></script>
+
+<script>
+	$(document).ready(function() {
+          $("#valood").validate({
+          messages: {
+            image : {
+              required: "<div class='text-danger small'><i class='fa fa-times-circle'></i> Masukkan Gambar Yang Diinginkan!</div>",
+              accept: "<div class='text-danger small'><i class='fa fa-times-circle'></i> File Ekstensi Harus (PNG/GIF/JPG/JPEG)!</div>",
+            },
+          },
+     });
+      });
+</script>

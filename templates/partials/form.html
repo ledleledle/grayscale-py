@@ -10,11 +10,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="/upload" method="post" enctype="multipart/form-data" >
+            <form id="valood" action="/upload" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputFile">Pilih File</label>
-                  <input type="file" name="image" id="exampleInputFile">
+                  <input type="file" name="image" id="exampleInputFile" required accept="image/jpeg,image/png,image/gif,image/jpg">
                 </div>
               
               </div>
