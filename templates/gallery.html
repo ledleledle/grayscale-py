@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery Grayscale</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body bgcolor="black">
+	{% for image_name in image_names %}
+
+	<img class="img-responsive" src=" {{url_for('send_image', filename=image_name)}}">
+
+	{% endfor %}
+</body>
+</html>
