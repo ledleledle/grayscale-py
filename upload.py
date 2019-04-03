@@ -1,12 +1,12 @@
 import os
-from flask import Flask, render_template, request, redirect, send_from_directory
+from flask import Flask, render_template, request, redirect, send_from_directory, url_for
 from PIL import Image
 import time
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def uindex():
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
@@ -26,7 +26,7 @@ def send_image(filename):
 def get_gallery():
     image_names = os.listdir('img')
     print(image_names)
-    return render_template("AdminLTE/index.html", image_names=image_names)
+    return render_template("gallery.html", image_names=image_names)
 
 if __name__ == "__main__":
     app.run(debug=True)
