@@ -1,9 +1,10 @@
 import os
-from flask import Flask, render_template, request, redirect, send_from_directory, url_for
+from flask import Flask, render_template, request, redirect, send_from_directory, url_for, flash
 from PIL import Image
 import time
 
 app = Flask(__name__)
+app.secret_key = "hesoyamuzumymwjcnruad"
 
 @app.route('/')
 def uindex():
@@ -15,10 +16,10 @@ def upload_file():
     img = Image.open(file).convert('L')
     timestr = time.strftime("%Y%m%d-%H%M%S")
     img.save('img/' + timestr + 'grey.png')
- 
+    flash('Gambar Berhasil Di Convert!')
     return redirect("/", code=302)
     
-@app.route('/upload/<filename>')
+@app.route('/img/<filename>')
 def send_image(filename):
     return send_from_directory("img", filename)
 

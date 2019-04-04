@@ -3,6 +3,15 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="alert alert-success" role="alert">
+                {% for message in messages %}
+                  <strong>{{ message }}</strong>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
